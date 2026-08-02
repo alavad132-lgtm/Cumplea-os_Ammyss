@@ -1,0 +1,1843 @@
+/*====================================================
+    FELIZ CUMPLEAÑOS AMMY
+    style.css
+    Parte 1
+=====================================================*/
+
+/*==========================
+        GOOGLE VARIABLES
+===========================*/
+
+:root{
+
+    --rosa:#ff5fa2;
+    --rosa-claro:#ffd8ea;
+    --rosa-pastel:#fff0f6;
+    --dorado:#ffd166;
+    --blanco:#ffffff;
+    --texto:#444;
+    --gris:#777;
+
+    --glass:rgba(255,255,255,.18);
+
+    --sombra:
+        0 10px 35px rgba(0,0,0,.18);
+
+    --radio:22px;
+
+    --transicion:.45s;
+
+}
+
+
+/*==========================
+        RESET
+===========================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    color:var(--texto);
+
+    overflow-x:hidden;
+
+    background:linear-gradient(
+        -45deg,
+        #ffe6f2,
+        #fff5f8,
+        #fde2ff,
+        #ffe9d8
+    );
+
+    background-size:400% 400%;
+
+    animation:fondo 15s ease infinite;
+
+}
+
+
+/*==========================
+      FONDO ANIMADO
+===========================*/
+
+@keyframes fondo{
+
+    0%{
+
+        background-position:0% 50%;
+
+    }
+
+    50%{
+
+        background-position:100% 50%;
+
+    }
+
+    100%{
+
+        background-position:0% 50%;
+
+    }
+
+}
+
+
+/*==========================
+        HERO
+===========================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    overflow:hidden;
+
+}
+
+
+/*==========================
+      BURBUJAS DE LUZ
+===========================*/
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.22);
+
+    filter:blur(70px);
+
+    top:-250px;
+    left:-150px;
+
+}
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:650px;
+    height:650px;
+
+    border-radius:50%;
+
+    background:rgba(255,209,102,.20);
+
+    filter:blur(90px);
+
+    bottom:-250px;
+    right:-180px;
+
+}
+
+
+/*==========================
+      CAPA OSCURA
+===========================*/
+
+.overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        rgba(255,255,255,.10),
+
+        rgba(255,255,255,.35)
+
+    );
+
+}
+
+
+/*==========================
+      CONTENIDO
+===========================*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:5;
+
+    width:90%;
+    max-width:850px;
+
+    padding:60px;
+
+    border-radius:30px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--sombra);
+
+    animation:subir 1.2s ease;
+
+}
+
+
+/*==========================
+      TITULO
+===========================*/
+
+.hero h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5.8rem;
+
+    color:var(--rosa);
+
+    margin-bottom:10px;
+
+    text-shadow:
+
+        0 5px 15px rgba(255,95,162,.25);
+
+}
+
+.hero h2{
+
+    font-size:3rem;
+
+    color:#ff2f7b;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:1.2rem;
+
+    color:#555;
+
+    line-height:1.8;
+
+    margin-bottom:45px;
+
+}
+
+
+/*==========================
+      BOTON
+===========================*/
+
+.hero button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    padding:18px 45px;
+
+    border-radius:50px;
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    background:linear-gradient(
+
+        135deg,
+
+        var(--rosa),
+
+        #ff7eb6
+
+    );
+
+    color:white;
+
+    transition:var(--transicion);
+
+    box-shadow:
+
+        0 12px 25px rgba(255,95,162,.35);
+
+}
+
+.hero button:hover{
+
+    transform:
+
+        translateY(-5px)
+
+        scale(1.05);
+
+    box-shadow:
+
+        0 20px 35px rgba(255,95,162,.45);
+
+}
+
+
+/*==========================
+      TARJETA
+===========================*/
+
+main{
+
+    width:100%;
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:80px 20px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/*==========================
+      TITULOS
+===========================*/
+
+section{
+
+    margin-bottom:90px;
+
+}
+
+section h2{
+
+    text-align:center;
+
+    font-size:2.5rem;
+
+    color:#ff3c88;
+
+    margin-bottom:40px;
+
+}
+
+
+/*==========================
+    CORAZONES
+===========================*/
+
+#hearts{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+
+}
+
+.heart{
+
+    position:absolute;
+
+    color:#ff6fae;
+
+    font-size:18px;
+
+    animation:float linear forwards;
+
+    opacity:.85;
+
+}
+
+
+/*==========================
+      CONFETI
+===========================*/
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:100;
+
+}
+
+
+/*==========================
+      ANIMACIONES
+===========================*/
+
+@keyframes subir{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(80px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+@keyframes float{
+
+    from{
+
+        transform:
+
+            translateY(100vh)
+
+            rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(-120px)
+
+            rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*==========================
+     SCROLL PERSONALIZADO
+===========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+
+        var(--rosa),
+
+        #ff87b8
+
+    );
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fff4f8;
+
+}
+/*====================================================
+        PARTE 2
+        CARTA Y GALERÍA
+====================================================*/
+
+
+/*==========================
+        CARTA
+===========================*/
+
+.letter{
+
+    background:rgba(255,255,255,.72);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:30px;
+
+    padding:60px;
+
+    box-shadow:var(--sombra);
+
+    transition:.4s;
+
+}
+
+.letter:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.letter p{
+
+    font-size:1.15rem;
+
+    line-height:2;
+
+    text-align:justify;
+
+    color:#555;
+
+}
+
+#typing{
+
+    min-height:220px;
+
+}
+
+
+/*==========================
+      GALERÍA
+===========================*/
+
+.gallery{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:50px;
+
+    box-shadow:var(--sombra);
+
+}
+
+
+/*==========================
+      SLIDER
+===========================*/
+
+.slider{
+
+    position:relative;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+#sliderImage{
+
+    width:100%;
+
+    max-width:900px;
+
+    height:520px;
+
+    object-fit:cover;
+
+    border-radius:25px;
+
+    transition:.7s;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.20);
+
+}
+
+#sliderImage:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+/*==========================
+     BOTONES DEL SLIDER
+===========================*/
+
+.prev,
+.next{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:60px;
+
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:white;
+
+    font-size:28px;
+
+    color:var(--rosa);
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.18);
+
+    transition:.3s;
+
+    z-index:20;
+
+}
+
+.prev:hover,
+.next:hover{
+
+    background:var(--rosa);
+
+    color:white;
+
+    transform:
+
+        translateY(-50%)
+
+        scale(1.1);
+
+}
+
+.prev{
+
+    left:20px;
+
+}
+
+.next{
+
+    right:20px;
+
+}
+
+
+/*==========================
+      MINIATURAS
+===========================*/
+
+.thumbnails{
+
+    margin-top:35px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.thumb{
+
+    width:120px;
+
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    border:4px solid transparent;
+
+    transition:.35s;
+
+    box-shadow:
+
+        0 8px 18px rgba(0,0,0,.18);
+
+}
+
+.thumb:hover{
+
+    transform:
+
+        translateY(-6px)
+
+        scale(1.06);
+
+}
+
+.thumb.active{
+
+    border-color:var(--rosa);
+
+}
+
+
+/*==========================
+     EFECTO DE APARICIÓN
+===========================*/
+
+.gallery{
+
+    animation:fadeUp .9s ease;
+
+}
+
+.letter{
+
+    animation:fadeUp .9s ease;
+
+}
+
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:
+
+            translateY(60px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+
+            translateY(0);
+
+    }
+
+}
+
+
+/*==========================
+      DECORACIÓN
+===========================*/
+
+.gallery::before{
+
+    content:"✨";
+
+    position:absolute;
+
+    display:none;
+
+}
+
+
+/*==========================
+      EFECTOS
+===========================*/
+
+.gallery img{
+
+    user-select:none;
+
+}
+
+.gallery img{
+
+    -webkit-user-drag:none;
+
+}
+
+
+/*==========================
+      SOMBRA SUAVE
+===========================*/
+
+.gallery,
+.letter{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s;
+
+}
+
+.gallery:hover,
+.letter:hover{
+
+    box-shadow:
+
+        0 20px 45px rgba(0,0,0,.15);
+
+}
+
+
+/*==========================
+     IMAGEN RESPONSIVA
+===========================*/
+
+@media(max-width:900px){
+
+    #sliderImage{
+
+        height:420px;
+
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .letter{
+
+        padding:35px;
+
+    }
+
+    .letter p{
+
+        font-size:1rem;
+
+    }
+
+    #sliderImage{
+
+        height:320px;
+
+    }
+
+    .prev,
+    .next{
+
+        width:50px;
+
+        height:50px;
+
+        font-size:24px;
+
+    }
+
+    .thumb{
+
+        width:90px;
+
+        height:65px;
+
+    }
+
+}
+
+
+@media(max-width:500px){
+
+    #sliderImage{
+
+        height:240px;
+
+    }
+
+    .thumb{
+
+        width:70px;
+
+        height:55px;
+
+    }
+
+    section h2{
+
+        font-size:2rem;
+
+    }
+
+}
+/*====================================================
+                PARTE 3
+        VIDEO - FRASES - BOTONES
+====================================================*/
+
+
+/*=========================================
+            SECCIÓN VIDEO
+=========================================*/
+
+.video-section{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(18px);
+
+    padding:50px;
+
+    border-radius:30px;
+
+    box-shadow:var(--sombra);
+
+    text-align:center;
+
+}
+
+.video-section video{
+
+    width:100%;
+
+    max-width:900px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.20);
+
+    transition:.4s;
+
+}
+
+.video-section video:hover{
+
+    transform:scale(1.02);
+
+}
+
+
+/*=========================================
+            FRASES
+=========================================*/
+
+.quotes{
+
+    text-align:center;
+
+}
+
+.quote-box{
+
+    position:relative;
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:60px;
+
+    min-height:220px;
+
+    box-shadow:var(--sombra);
+
+}
+
+.quote{
+
+    display:none;
+
+    font-size:1.6rem;
+
+    line-height:1.8;
+
+    color:#555;
+
+    font-style:italic;
+
+    animation:fadeQuote .7s;
+
+}
+
+.quote.active{
+
+    display:block;
+
+}
+
+@keyframes fadeQuote{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*=========================================
+            BOTONES
+=========================================*/
+
+.buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:30px;
+
+    flex-wrap:wrap;
+
+}
+
+.buttons button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px 38px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    color:white;
+
+}
+
+#playMusic{
+
+    background:linear-gradient(
+        135deg,
+        #ff5fa2,
+        #ff7fb8
+    );
+
+    box-shadow:
+
+        0 12px 25px rgba(255,95,162,.35);
+
+}
+
+#playMusic:hover{
+
+    transform:
+
+        translateY(-6px)
+        scale(1.05);
+
+}
+
+#loveButton{
+
+    background:linear-gradient(
+        135deg,
+        #ff8a00,
+        #ff3d6e
+    );
+
+    box-shadow:
+
+        0 12px 25px rgba(255,61,110,.35);
+
+}
+
+#loveButton:hover{
+
+    transform:
+
+        translateY(-6px)
+        scale(1.05);
+
+}
+
+
+/*=========================================
+            MENSAJE FINAL
+=========================================*/
+
+.final-message{
+
+    background:linear-gradient(
+        135deg,
+        rgba(255,255,255,.90),
+        rgba(255,240,246,.95)
+    );
+
+    backdrop-filter:blur(18px);
+
+    padding:70px;
+
+    border-radius:35px;
+
+    text-align:center;
+
+    box-shadow:var(--sombra);
+
+}
+
+.final-message p{
+
+    margin-top:25px;
+
+    margin-bottom:35px;
+
+    line-height:2;
+
+    font-size:1.15rem;
+
+    color:#555;
+
+}
+
+.final-message h3{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    color:var(--rosa);
+
+}
+
+
+/*=========================================
+            FOOTER
+=========================================*/
+
+footer{
+
+    margin-top:80px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#888;
+
+    font-size:.95rem;
+
+}
+
+footer span{
+
+    color:var(--rosa);
+
+    font-weight:bold;
+
+}
+
+
+/*=========================================
+        EFECTOS HOVER
+=========================================*/
+
+.video-section,
+.quote-box,
+.final-message{
+
+    transition:.4s;
+
+}
+
+.video-section:hover,
+.quote-box:hover,
+.final-message:hover{
+
+    transform:translateY(-8px);
+
+}
+
+
+/*=========================================
+            RESPONSIVE
+=========================================*/
+
+@media(max-width:900px){
+
+    .quote{
+
+        font-size:1.3rem;
+
+    }
+
+    .quote-box{
+
+        padding:40px;
+
+    }
+
+    .final-message{
+
+        padding:45px;
+
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .buttons{
+
+        flex-direction:column;
+
+    }
+
+    .buttons button{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    .quote{
+
+        font-size:1.1rem;
+
+    }
+
+    .video-section{
+
+        padding:25px;
+
+    }
+
+    .video-section video{
+
+        border-radius:18px;
+
+    }
+
+    .final-message h3{
+
+        font-size:2.3rem;
+
+    }
+
+}
+
+
+@media(max-width:480px){
+
+    .quote-box{
+
+        padding:25px;
+
+    }
+
+    .final-message{
+
+        padding:30px;
+
+    }
+
+    .final-message p{
+
+        font-size:1rem;
+
+    }
+
+}
+
+/*====================================================
+                PARTE 4A
+      EFECTOS PREMIUM Y ANIMACIONES
+====================================================*/
+
+
+/*==================================
+        CONTENEDORES
+===================================*/
+
+#hearts,
+#particles{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+
+/*==================================
+        CORAZONES
+===================================*/
+
+.heart{
+
+    position:absolute;
+
+    bottom:-60px;
+
+    font-size:18px;
+
+    color:#ff5fa2;
+
+    opacity:.85;
+
+    animation:heartFloat linear forwards;
+
+    filter:
+
+        drop-shadow(0 0 8px rgba(255,95,162,.35));
+
+}
+
+
+@keyframes heartFloat{
+
+    0%{
+
+        transform:
+
+            translateY(0)
+
+            translateX(0)
+
+            rotate(0deg)
+
+            scale(.6);
+
+        opacity:0;
+
+    }
+
+    15%{
+
+        opacity:1;
+
+    }
+
+    50%{
+
+        transform:
+
+            translateY(-45vh)
+
+            translateX(25px)
+
+            rotate(120deg)
+
+            scale(1);
+
+    }
+
+    100%{
+
+        transform:
+
+            translateY(-115vh)
+
+            translateX(-30px)
+
+            rotate(360deg)
+
+            scale(1.4);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*==================================
+        PARTÍCULAS
+===================================*/
+
+.particle{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:white;
+
+    opacity:.6;
+
+    animation:particleMove linear forwards;
+
+    box-shadow:
+
+        0 0 10px white,
+
+        0 0 25px rgba(255,255,255,.8);
+
+}
+
+
+@keyframes particleMove{
+
+    from{
+
+        transform:
+
+            translateY(100vh);
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(-120px);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/*==================================
+        DESTELLOS
+===================================*/
+
+.sparkle{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+    box-shadow:
+
+        0 0 10px #fff,
+
+        0 0 25px #fff,
+
+        0 0 45px #ffd166;
+
+    animation:twinkle 2s infinite;
+
+}
+
+
+@keyframes twinkle{
+
+    0%{
+
+        transform:scale(.2);
+
+        opacity:.2;
+
+    }
+
+    50%{
+
+        transform:scale(1.4);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:scale(.2);
+
+        opacity:.2;
+
+    }
+
+}
+
+
+/*==================================
+        BRILLO GENERAL
+===================================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(
+
+        circle at 15% 25%,
+
+        rgba(255,255,255,.35),
+
+        transparent 35%
+
+    ),
+
+    radial-gradient(
+
+        circle at 85% 15%,
+
+        rgba(255,255,255,.25),
+
+        transparent 28%
+
+    ),
+
+    radial-gradient(
+
+        circle at 60% 85%,
+
+        rgba(255,209,102,.18),
+
+        transparent 32%
+
+    );
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+/*==================================
+      EFECTO DE CRISTAL
+===================================*/
+
+.hero-content,
+.letter,
+.gallery,
+.video-section,
+.quote-box,
+.final-message{
+
+    border:1px solid rgba(255,255,255,.35);
+
+}
+
+
+/*==================================
+      BRILLO AL PASAR EL MOUSE
+===================================*/
+
+.hero-content::before,
+.letter::before,
+.gallery::before,
+.video-section::before,
+.quote-box::before,
+.final-message::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:inherit;
+
+    background:
+
+    linear-gradient(
+
+        120deg,
+
+        transparent 25%,
+
+        rgba(255,255,255,.45),
+
+        transparent 75%
+
+    );
+
+    transform:
+
+        translateX(-130%);
+
+    transition:1.2s;
+
+    pointer-events:none;
+
+}
+
+
+.hero-content:hover::before,
+.letter:hover::before,
+.gallery:hover::before,
+.video-section:hover::before,
+.quote-box:hover::before,
+.final-message:hover::before{
+
+    transform:
+
+        translateX(130%);
+
+}
+
+
+/*==================================
+      RESPLANDOR SUAVE
+===================================*/
+
+.hero h1{
+
+    animation:glow 3s infinite;
+
+}
+
+@keyframes glow{
+
+    0%{
+
+        text-shadow:
+
+            0 0 10px rgba(255,95,162,.25);
+
+    }
+
+    50%{
+
+        text-shadow:
+
+            0 0 30px rgba(255,95,162,.60),
+
+            0 0 60px rgba(255,95,162,.35);
+
+    }
+
+    100%{
+
+        text-shadow:
+
+            0 0 10px rgba(255,95,162,.25);
+
+    }
+
+}
+
+
+/*==================================
+      BOTONES PREMIUM
+===================================*/
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+button::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-50%;
+
+    left:-150%;
+
+    width:60%;
+
+    height:220%;
+
+    background:
+
+        rgba(255,255,255,.35);
+
+    transform:
+
+        rotate(25deg);
+
+    transition:.8s;
+
+}
+
+
+button:hover::after{
+
+    left:160%;
+
+}
+
+
+/*==================================
+      FLOTACIÓN SUAVE
+===================================*/
+
+.gallery,
+.video-section,
+.quote-box{
+
+    animation:floatBox 6s ease-in-out infinite;
+
+}
+
+
+@keyframes floatBox{
+
+    0%{
+
+        transform:translateY(0);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+/*==================================
+      EFECTO IMÁGENES
+===================================*/
+
+.thumb{
+
+    transition:
+
+        transform .35s,
+
+        box-shadow .35s,
+
+        border .35s;
+
+}
+
+
+.thumb:hover{
+
+    box-shadow:
+
+        0 15px 30px rgba(255,95,162,.35);
+
+}
+
+
+/*==================================
+      EFECTO FOTO PRINCIPAL
+===================================*/
+
+#sliderImage{
+
+    animation:fadePhoto .8s;
+
+}
+
+
+@keyframes fadePhoto{
+
+    from{
+
+        opacity:.2;
+
+        transform:scale(.95);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*==================================
+      VIDEO
+===================================*/
+
+video{
+
+    background:black;
+
+}
