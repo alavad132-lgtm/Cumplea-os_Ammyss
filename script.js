@@ -39,7 +39,7 @@ const images = [
     "img/foto5.jpg",
     "img/foto6.jpg",
     "img/foto7.jpg",
-    "img/foto8.jpg",
+    "img/foto8.jpeg",
 ];
 
 let currentImage = 0;
